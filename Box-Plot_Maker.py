@@ -1,104 +1,30 @@
 import turtle
+from functions_calculation import *
 
-# diese Zahlen können sie in die eingeben, damit es nicht mühsam mit dem programm es zu # machen -> 32,32,33,32,42,34,45,53,30,44,37,25
+with open('input.txt', encoding='utf-8') as f:
+    CONTENT = f.read()
+    f.close()
 
-# Wo alles anfangt, die Liste mit allen Daten, um eine Box-Plot zu bauen
-List = [32,32,33,32,42,34,45,53,30,44,37,25,23]
+def get_int_list(array: str):
+    string_array = array.split(" ")
+    int_array = [int(n) for n in string_array]
+    return int_array
 
-# Wie gross in Länge die Box-Plot gebaut wird
-Size = 10
+int_list = get_int_list(CONTENT)
+int_list_sorted = sorted(int_list)
+list_length = len(int_list)
+SIZE = 10
 
-# Die Spannweite zu berechnen (unnötig, ist wichtig, wenn das rechnen des Box-Plot Länge)
-def SW():
-    global SpannWeite
-    List.sort()
-    SpannWeite = List[-1] - List[0]
+BOX_PLOT_MIN = item_min(int_list_sorted)
+BOX_PLOT_LOWER_QUARTILE_ODD = lower_quartile_odd(int_list_sorted)
+BOX_PLOT_LOWER_QUARTILE_EVEN = lower_quartile_even(int_list_sorted)
+BOX_PLOT_MEDIAN_ODD = median_odd(int_list_sorted, list_length)
+BOX_PLOT_MEDIAN_EVEN = median_even(int_list_sorted, list_length)
+BOX_PLOT_UPPER_QUARTILE_ODD = upper_quartile_odd(int_list_sorted)
+BOX_PLOT_UPPER_QUARTILE_EVEN = upper_quartile_even(int_list_sorted)
+BOX_PLOT_MAX = item_max(int_list_sorted)
 
-# den Zentralwert finden, wenn die Liste hat gerade Anzahl Elemente
-def ZW_even():
-    global ZentralWert_even
-    List.sort()
-    Items = (len(List))
-    num1 = Items//2-1
-    num2 = Items//2
-    ZentralWert_even = (List[num1] + List[num2]) / 2
 
-# den Zentralwert finden, wenn die Liste hat ungerade Anzahl Elemente
-def ZW_odd():
-    global ZentralWert_odd
-    List.sort()
-    Items = (len(List))
-    num2 = Items//2
-    ZentralWert_odd = List[num2]
-
-# Die grösste Zahl in der Liste zu finden
-def MAX():
-    global maximum
-    maximum = (max(List))
-
-# Die kleinste Zahl in der Liste zu finden
-def MIN():
-    global minimum
-    minimum = (min(List))
-
-# Den Oberes Quartil zu finden, wenn die Liste hat gerade Anzahl Elemente
-def OQuart_even():
-    global ObererQuartal_even
-    List.sort()
-    Half_List = []
-    Half_List.extend(List[len(List)//2:])
-    Items = len(Half_List)
-    num1 = Items // 2 - 1
-    num2 = Items // 2
-    ObererQuartal_even = float((Half_List[num1] + Half_List[num2]) / 2)
-
-# Den Oberes Quartil zu finden, wenn die Liste hat ungerade Anzahl Elemente
-def OQuart_odd():
-    global ObererQuartal_odd
-    List.sort()
-    Half_List = []
-    Half_List.extend(List[len(List)//2+1:])
-    Items = len(Half_List)
-    num1 = Items // 2 - 1
-    num2 = Items // 2
-    ObererQuartal_odd = float((Half_List[num1] + Half_List[num2]) / 2)
-
-# Den unteres Quartil zu finden, wenn die Liste hat gerade Anzahl Elemente
-def UQuart_even():
-    global UntererQuartal_even
-    List.sort()
-    Half_List = []
-    Half_List.extend(List[:len(List)//2])
-    Items = len(Half_List)
-    num1 = Items // 2 - 1
-    num2 = Items // 2
-    UntererQuartal_even = float((Half_List[num1] + Half_List[num2]) / 2)
-
-# Den unteres Quartil zu finden, wenn die Liste hat ungerade Anzahl Elemente
-def UQuart_odd():
-    global UntererQuartal_odd
-    List.sort()
-    Half_List = []
-    Half_List.extend(List[:len(List)//2+1])
-    Items = len(Half_List)
-    num1 = Items // 2 - 1
-    num2 = Items // 2
-    UntererQuartal_odd = float((Half_List[num1] + Half_List[num2]) / 2)
-
-# alle unterprogramme öffnen um die Daten zu bekommen (sehr wichtig!)
-def calculation():
-    SW()
-    ZW_even()
-    ZW_odd()
-    MAX()
-    MIN()
-    OQuart_even()
-    UQuart_even()
-    OQuart_odd()
-    UQuart_odd()
-
-# Hier kommt das Zeichnen des Box-Plots
-# dieses Unterprogramm macht die Linie aufrecht am anfang und ende des Box-Plots
 def Turtle_Line_short():
     turtle.left(90)
     turtle.forward(20)
@@ -131,11 +57,11 @@ def Box1_even():
     turtle.right(90)
     turtle.forward(40)
     turtle.left(90)
-    turtle.forward((ZentralWert_even - UntererQuartal_even) * Size)
+    turtle.forward((BOX_PLOT_MEDIAN_EVEN - BOX_PLOT_LOWER_QUARTILE_EVEN) * SIZE)
     turtle.left(90)
     turtle.forward(40*2)
     turtle.left(90)
-    turtle.forward((ZentralWert_even - UntererQuartal_even) * Size)
+    turtle.forward((BOX_PLOT_MEDIAN_EVEN - BOX_PLOT_LOWER_QUARTILE_EVEN) * SIZE)
     turtle.left(90)
     turtle.forward(40)
     turtle.left(90)
@@ -145,11 +71,11 @@ def Box1_odd():
     turtle.right(90)
     turtle.forward(40)
     turtle.left(90)
-    turtle.forward((ZentralWert_odd - UntererQuartal_odd) * Size)
+    turtle.forward((BOX_PLOT_MEDIAN_ODD - BOX_PLOT_LOWER_QUARTILE_ODD) * SIZE)
     turtle.left(90)
     turtle.forward(40*2)
     turtle.left(90)
-    turtle.forward((ZentralWert_odd - UntererQuartal_odd) * Size)
+    turtle.forward((BOX_PLOT_MEDIAN_ODD - BOX_PLOT_LOWER_QUARTILE_ODD) * SIZE)
     turtle.left(90)
     turtle.forward(40)
     turtle.left(90)
@@ -159,11 +85,11 @@ def Box2_even():
     turtle.left(90)
     turtle.forward(40)
     turtle.right(90)
-    turtle.forward((ObererQuartal_even - ZentralWert_even) * Size)
+    turtle.forward((BOX_PLOT_UPPER_QUARTILE_EVEN - BOX_PLOT_MEDIAN_EVEN) * SIZE)
     turtle.right(90)
     turtle.forward(40*2)
     turtle.right(90)
-    turtle.forward((ObererQuartal_even - ZentralWert_even) * Size)
+    turtle.forward((BOX_PLOT_UPPER_QUARTILE_EVEN - BOX_PLOT_MEDIAN_EVEN) * SIZE)
     turtle.right(90)
     turtle.forward(40)
     turtle.right(90)
@@ -173,99 +99,87 @@ def Box2_odd():
     turtle.left(90)
     turtle.forward(40)
     turtle.right(90)
-    turtle.forward((ObererQuartal_odd - ZentralWert_odd) * Size)
+    turtle.forward((BOX_PLOT_UPPER_QUARTILE_ODD - BOX_PLOT_MEDIAN_ODD) * SIZE)
     turtle.right(90)
     turtle.forward(40*2)
     turtle.right(90)
-    turtle.forward((ObererQuartal_odd - ZentralWert_odd) * Size)
+    turtle.forward((BOX_PLOT_UPPER_QUARTILE_ODD - BOX_PLOT_MEDIAN_ODD) * SIZE)
     turtle.right(90)
     turtle.forward(40)
     turtle.right(90)
 
 # alle Unterprogramme gehen in diese unterprogramm, wo zuständig für bauen des Box-plot, # wenn die Liste hat gerade Anzahl Elemente
 def Box_Plot_Maker_even():
-    calculation()
     solution_even()
     Turtle_Line_short()
-    turtle.forward((UntererQuartal_even - minimum)*Size)
+    turtle.forward((BOX_PLOT_LOWER_QUARTILE_EVEN - BOX_PLOT_MIN)*SIZE)
     Box1_even()
     turtle.penup()
-    turtle.forward((ZentralWert_even - UntererQuartal_even) * Size)
+    turtle.forward((BOX_PLOT_MEDIAN_EVEN - BOX_PLOT_LOWER_QUARTILE_EVEN) * SIZE)
     turtle.pendown()
     Box2_even()
     turtle.penup()
-    turtle.forward((ObererQuartal_even - ZentralWert_even) * Size)
+    turtle.forward((BOX_PLOT_UPPER_QUARTILE_EVEN - BOX_PLOT_MEDIAN_EVEN) * SIZE)
     turtle.pendown()
-    turtle.forward((maximum - ObererQuartal_even) * Size)
+    turtle.forward((BOX_PLOT_MAX - BOX_PLOT_UPPER_QUARTILE_EVEN) * SIZE)
     Turtle_Line_short()
 
 # alle Unterprogramme gehen in diese unterprogramm, wo zuständig für bauen des Box-plot, # wenn die Liste hat ungerade Anzahl Elemente
 def Box_Plot_Maker_odd():
-    calculation()
     solution_odd()
     Turtle_Line_short()
-    turtle.forward((UntererQuartal_odd - minimum)*Size)
+    turtle.forward((BOX_PLOT_LOWER_QUARTILE_ODD - BOX_PLOT_MIN)*SIZE)
     Box1_odd()
     turtle.penup()
-    turtle.forward((ZentralWert_odd - UntererQuartal_odd) * Size)
+    turtle.forward((BOX_PLOT_MEDIAN_ODD - BOX_PLOT_LOWER_QUARTILE_ODD) * SIZE)
     turtle.pendown()
     Box2_odd()
     turtle.penup()
-    turtle.forward((ObererQuartal_odd - ZentralWert_odd) * Size)
+    turtle.forward((BOX_PLOT_UPPER_QUARTILE_ODD - BOX_PLOT_MEDIAN_ODD) * SIZE)
     turtle.pendown()
-    turtle.forward((maximum - ObererQuartal_odd) * Size)
+    turtle.forward((BOX_PLOT_MAX - BOX_PLOT_UPPER_QUARTILE_ODD) * SIZE)
     Turtle_Line_short()
 
 # gibt dir die Ergebnisse
 def solution_even():
-    print(f"Das Zentral Wert: {ZentralWert_even}")
-    print(f"Das Maximum: {maximum}")
-    print(f"Das Minimum: {minimum}")
-    print(f"Das Obere Quartil: {ObererQuartal_even}")
-    print(f"Das Untere Quartil: {UntererQuartal_even}")
+    print(f"Das Zentral Wert: {BOX_PLOT_MEDIAN_EVEN}")
+    print(f"Das Maximum: {BOX_PLOT_MAX}")
+    print(f"Das Minimum: {BOX_PLOT_MIN}")
+    print(f"Das Obere Quartil: {BOX_PLOT_UPPER_QUARTILE_EVEN}")
+    print(f"Das Untere Quartil: {BOX_PLOT_LOWER_QUARTILE_EVEN}")
 
 def solution_odd():
-    print(f"Das Zentral Wert: {ZentralWert_odd}")
-    print(f"Das Maximum: {maximum}")
-    print(f"Das Minimum: {minimum}")
-    print(f"Das Obere Quartil: {ObererQuartal_odd}")
-    print(f"Das Untere Quartil: {UntererQuartal_odd}")
+    print(f"Das Zentral Wert: {BOX_PLOT_MEDIAN_ODD}")
+    print(f"Das Maximum: {BOX_PLOT_MAX}")
+    print(f"Das Minimum: {BOX_PLOT_MIN}")
+    print(f"Das Obere Quartil: {BOX_PLOT_UPPER_QUARTILE_ODD}")
+    print(f"Das Untere Quartil: {BOX_PLOT_LOWER_QUARTILE_ODD}")
 # Es fangt am gleichen Ort aber tiefer und mach eine Linie jede 5 mal
 def graph():
-    List.sort()
     turtle.penup()
     turtle.goto(-300, -100)
     turtle.pendown()
     turtle_Line_shorter()
-    num = List[0]
-    while(num < List[-1]):
+    num = int_list_sorted[0]
+    while(num < int_list_sorted[-1]):
         if num % 5 == 0:
             turtle_Line_shortest()
-            turtle.forward(Size)
+            turtle.forward(SIZE)
             num = num + 1
         else:
-            turtle.forward(Size)
+            turtle.forward(SIZE)
             num = num + 1
     turtle_Line_shorter()
 
-# die erklärung gedruckt
 print('''
 schreib die Zahlen, wenn fertig, schreib cal
 ''')
 
-# geht in einem loop
 while(1):
-
-# die Person schreibt entweder die nummer für die Liste oder cal, damit das bauen starten
     command = input('> ')
-
-# wenn es cal ist
     if command.lower() == 'cal':
-
-# Es schaut, ob in der Liste gerade oder ungerade anzahl Elemente hat und macht die Boxplot
-        if (len(List) % 2) == 0:
-
-# wenn Anzahl gerade
+        if (len(int_list_sorted) % 2) == 0:
+            int_list_sorted.sort
             turtle.penup()
             turtle.goto(-300, 0)
             turtle.pendown()
@@ -274,8 +188,7 @@ while(1):
             turtle.mainloop()
             break
         else:
-
-# wenn Anzahl ungerade
+            int_list_sorted.sort
             turtle.penup()
             turtle.goto(-300, 0)
             turtle.pendown()
@@ -283,8 +196,6 @@ while(1):
             graph()
             turtle.mainloop()
             break
-
-# wenn es nicht cal, gibt es die Zahl zu Liste dazu (wichtig, muss zum intiger gewechselt werden!)
     else:
-        List.append(int(command))
+        int_list.append(int(command))
         print('habe dazu gegeben')
