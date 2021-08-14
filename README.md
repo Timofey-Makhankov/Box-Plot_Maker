@@ -1,3 +1,15 @@
-# Box-Plot_Maker
+# Box-Plot Maker
 
-put in input and get a Box-Plot Diagram
+## __English__
+
+hello
+
+## __Deutsch__
+
+hello
+
+## __Русский__
+
+hello
+
+---

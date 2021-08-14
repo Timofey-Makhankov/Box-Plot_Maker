@@ -1,3 +1,5 @@
+import turtle
+# Makes a Horizontal Line for each Size
 def Turtle_Line_short():
     turtle.left(90)
     turtle.forward(20)
@@ -26,89 +28,59 @@ def turtle_Line_shortest():
     turtle.right(90)
 
 
-def Box1_even():
+# Creates one of the Squares to the left 
+def Box1_even(median, lower_quartile, size):
     turtle.right(90)
     turtle.forward(40)
     turtle.left(90)
-    turtle.forward((BOX_PLOT_MEDIAN_EVEN - BOX_PLOT_LOWER_QUARTILE_EVEN) * SIZE)
+    turtle.forward((median - lower_quartile) * size)
     turtle.left(90)
     turtle.forward(40*2)
     turtle.left(90)
-    turtle.forward((BOX_PLOT_MEDIAN_EVEN - BOX_PLOT_LOWER_QUARTILE_EVEN) * SIZE)
+    turtle.forward((median - lower_quartile) * size)
     turtle.left(90)
     turtle.forward(40)
     turtle.left(90)
 
 
-def Box1_odd():
+def Box1_odd(median: float, lower_quartile:float, size: int):
     turtle.right(90)
     turtle.forward(40)
     turtle.left(90)
-    turtle.forward((BOX_PLOT_MEDIAN_ODD - BOX_PLOT_LOWER_QUARTILE_ODD) * SIZE)
+    turtle.forward((median - lower_quartile) * size)
     turtle.left(90)
     turtle.forward(40*2)
     turtle.left(90)
-    turtle.forward((BOX_PLOT_MEDIAN_ODD - BOX_PLOT_LOWER_QUARTILE_ODD) * SIZE)
+    turtle.forward((median - lower_quartile) * size)
     turtle.left(90)
     turtle.forward(40)
     turtle.left(90)
 
 
-def Box2_even():
+# Creates one of the Squares to the right
+def Box2_even(upper_quartile, median, size):
     turtle.left(90)
     turtle.forward(40)
     turtle.right(90)
-    turtle.forward((BOX_PLOT_UPPER_QUARTILE_EVEN - BOX_PLOT_MEDIAN_EVEN) * SIZE)
+    turtle.forward((upper_quartile - median) * size)
     turtle.right(90)
     turtle.forward(40*2)
     turtle.right(90)
-    turtle.forward((BOX_PLOT_UPPER_QUARTILE_EVEN - BOX_PLOT_MEDIAN_EVEN) * SIZE)
+    turtle.forward((upper_quartile - median) * size)
     turtle.right(90)
     turtle.forward(40)
     turtle.right(90)
 
 
-def Box2_odd():
+def Box2_odd(upper_quartile, median, size):
     turtle.left(90)
     turtle.forward(40)
     turtle.right(90)
-    turtle.forward((BOX_PLOT_UPPER_QUARTILE_ODD - BOX_PLOT_MEDIAN_ODD) * SIZE)
+    turtle.forward((upper_quartile - median) * size)
     turtle.right(90)
     turtle.forward(40*2)
     turtle.right(90)
-    turtle.forward((BOX_PLOT_UPPER_QUARTILE_ODD - BOX_PLOT_MEDIAN_ODD) * SIZE)
+    turtle.forward((upper_quartile - median) * size)
     turtle.right(90)
     turtle.forward(40)
     turtle.right(90)
-
-
-def Box_Plot_Maker_even():
-    solution_even()
-    Turtle_Line_short()
-    turtle.forward((BOX_PLOT_LOWER_QUARTILE_EVEN - BOX_PLOT_MIN)*SIZE)
-    Box1_even()
-    turtle.penup()
-    turtle.forward((BOX_PLOT_MEDIAN_EVEN - BOX_PLOT_LOWER_QUARTILE_EVEN) * SIZE)
-    turtle.pendown()
-    Box2_even()
-    turtle.penup()
-    turtle.forward((BOX_PLOT_UPPER_QUARTILE_EVEN - BOX_PLOT_MEDIAN_EVEN) * SIZE)
-    turtle.pendown()
-    turtle.forward((BOX_PLOT_MAX - BOX_PLOT_UPPER_QUARTILE_EVEN) * SIZE)
-    Turtle_Line_short()
-
-
-def Box_Plot_Maker_odd():
-    solution_odd()
-    Turtle_Line_short()
-    turtle.forward((BOX_PLOT_LOWER_QUARTILE_ODD - BOX_PLOT_MIN)*SIZE)
-    Box1_odd()
-    turtle.penup()
-    turtle.forward((BOX_PLOT_MEDIAN_ODD - BOX_PLOT_LOWER_QUARTILE_ODD) * SIZE)
-    turtle.pendown()
-    Box2_odd()
-    turtle.penup()
-    turtle.forward((BOX_PLOT_UPPER_QUARTILE_ODD - BOX_PLOT_MEDIAN_ODD) * SIZE)
-    turtle.pendown()
-    turtle.forward((BOX_PLOT_MAX - BOX_PLOT_UPPER_QUARTILE_ODD) * SIZE)
-    Turtle_Line_short()
