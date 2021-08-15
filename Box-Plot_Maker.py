@@ -143,6 +143,7 @@ while(1):
             print("\nNumber has been added")
         except:
             print("""
-Error!!!
+Error!!! invalid command or ni number given
+
 Retry again
             """)
