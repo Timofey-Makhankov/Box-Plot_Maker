@@ -1,24 +1,25 @@
 import turtle
 from functions_calculation import *
 from Turtle_drawing_functions import *
-
+# get's Data from Text File  
 with open('input.txt', encoding='utf-8') as f:
     CONTENT = f.read()
     f.close()
 
-def get_int_list(array: str):
+# makes it into list
+def float_list(array: str):
     string_array = array.split(" ")
     int_array = [float(n) for n in string_array]
     return int_array
 
-
-int_list = get_int_list(CONTENT)
+# initializing
+int_list = float_list(CONTENT)
 int_list_sorted = sorted(int_list)
 list_length = len(int_list)
 
 # Makes the Diagram bigger
 SIZE = 10
-
+# global Variables
 BOX_PLOT_MIN = item_min(int_list_sorted)
 BOX_PLOT_LOWER_QUARTILE_ODD = lower_quartile_odd(int_list_sorted)
 BOX_PLOT_LOWER_QUARTILE_EVEN = lower_quartile_even(int_list_sorted)
@@ -28,7 +29,7 @@ BOX_PLOT_UPPER_QUARTILE_ODD = upper_quartile_odd(int_list_sorted)
 BOX_PLOT_UPPER_QUARTILE_EVEN = upper_quartile_even(int_list_sorted)
 BOX_PLOT_MAX = item_max(int_list_sorted)
 
-
+# makes the Diagram
 def Box_Plot_Maker_even():
     Turtle_Line_short()
     turtle.forward((BOX_PLOT_LOWER_QUARTILE_EVEN - BOX_PLOT_MIN)*SIZE)
@@ -58,23 +59,21 @@ def Box_Plot_Maker_odd():
     turtle.forward((BOX_PLOT_MAX - BOX_PLOT_UPPER_QUARTILE_ODD) * SIZE)
     Turtle_Line_short()
 
-
 # Prints the Result in the Terminal
 def solution_even():
-    print(f"Das Zentral Wert: {BOX_PLOT_MEDIAN_EVEN}")
-    print(f"Das Maximum: {BOX_PLOT_MAX}")
-    print(f"Das Minimum: {BOX_PLOT_MIN}")
-    print(f"Das Obere Quartil: {BOX_PLOT_UPPER_QUARTILE_EVEN}")
-    print(f"Das Untere Quartil: {BOX_PLOT_LOWER_QUARTILE_EVEN}")
+    print(f"\nMedian: {BOX_PLOT_MEDIAN_EVEN}")
+    print(f"Max: {BOX_PLOT_MAX}")
+    print(f"Min: {BOX_PLOT_MIN}")
+    print(f"upper Quartile: {BOX_PLOT_UPPER_QUARTILE_EVEN}")
+    print(f"lower Quartile: {BOX_PLOT_LOWER_QUARTILE_EVEN}")
 
 
 def solution_odd():
-    print(f"Das Zentral Wert: {BOX_PLOT_MEDIAN_ODD}")
-    print(f"Das Maximum: {BOX_PLOT_MAX}")
-    print(f"Das Minimum: {BOX_PLOT_MIN}")
-    print(f"Das Obere Quartil: {BOX_PLOT_UPPER_QUARTILE_ODD}")
-    print(f"Das Untere Quartil: {BOX_PLOT_LOWER_QUARTILE_ODD}")
-
+    print(f"\nMedian: {BOX_PLOT_MEDIAN_ODD}")
+    print(f"Max: {BOX_PLOT_MAX}")
+    print(f"Min: {BOX_PLOT_MIN}")
+    print(f"upper Quartile: {BOX_PLOT_UPPER_QUARTILE_ODD}")
+    print(f"lower Quartile: {BOX_PLOT_LOWER_QUARTILE_ODD}")
 
 # Makes a graph under the diagramm
 def graph():
@@ -93,16 +92,17 @@ def graph():
             num = num + 1
     turtle_Line_shorter()
 
-
+# instructions
 print('''
-schreib die Zahlen, wenn fertig, schreib cal
-check the list, type lis
+cal -> creates the Box-plot
+lis -> show Data (List)
+any number -> will be added to the list
 ''')
 
 while(1):
-    command = input('> ')
+    command = input('\n> ')
     if command.lower() == 'cal':  
-        if len(int_list_sorted) % 2 == 0:
+        if len(int_list_sorted) % 2 == 0: # List has even amount of items
             int_list_sorted.sort
             turtle.penup()
             turtle.goto(-300, 0)
@@ -112,7 +112,7 @@ while(1):
             graph()
             turtle.mainloop()
             break
-        else:
+        else: # List has odd amount of items
             int_list_sorted.sort
             turtle.penup()
             turtle.goto(-300, 0)
@@ -122,20 +122,27 @@ while(1):
             graph()
             turtle.mainloop()
             break
-        
-    if command.lower() == 'lis':
+    # gives the list    
+    if (command.lower()) == 'lis':
         print(int_list_sorted)
-        print(BOX_PLOT_MAX)
-
-    elif command == float or int:
-        int_list_sorted.append(float(command))
-        int_list_sorted.sort()
-        BOX_PLOT_MIN = item_min(int_list_sorted)
-        BOX_PLOT_LOWER_QUARTILE_ODD = lower_quartile_odd(int_list_sorted)
-        BOX_PLOT_LOWER_QUARTILE_EVEN = lower_quartile_even(int_list_sorted)
-        BOX_PLOT_MEDIAN_ODD = median_odd(int_list_sorted, list_length)
-        BOX_PLOT_MEDIAN_EVEN = median_even(int_list_sorted, list_length)
-        BOX_PLOT_UPPER_QUARTILE_ODD = upper_quartile_odd(int_list_sorted)
-        BOX_PLOT_UPPER_QUARTILE_EVEN = upper_quartile_even(int_list_sorted)
-        BOX_PLOT_MAX = item_max(int_list_sorted)
-        print("Number has been added")
+    # when number is given
+    
+    else:
+        try:
+            float(command)
+            int_list_sorted.append(float(command))
+            int_list_sorted.sort()
+            BOX_PLOT_MIN = item_min(int_list_sorted)
+            BOX_PLOT_LOWER_QUARTILE_ODD = lower_quartile_odd(int_list_sorted)
+            BOX_PLOT_LOWER_QUARTILE_EVEN = lower_quartile_even(int_list_sorted)
+            BOX_PLOT_MEDIAN_ODD = median_odd(int_list_sorted, list_length)
+            BOX_PLOT_MEDIAN_EVEN = median_even(int_list_sorted, list_length)
+            BOX_PLOT_UPPER_QUARTILE_ODD = upper_quartile_odd(int_list_sorted)
+            BOX_PLOT_UPPER_QUARTILE_EVEN = upper_quartile_even(int_list_sorted)
+            BOX_PLOT_MAX = item_max(int_list_sorted)
+            print("\nNumber has been added")
+        except:
+            print("""
+Error!!!
+Retry again
+            """)
