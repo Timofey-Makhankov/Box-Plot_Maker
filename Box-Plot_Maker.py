@@ -1,4 +1,4 @@
-import turtle
+from turtle import *
 from functions_calculation import *
 from Turtle_drawing_functions import *
 # get's Data from Text File  
@@ -140,10 +140,8 @@ while(1):
             BOX_PLOT_UPPER_QUARTILE_ODD = upper_quartile_odd(int_list_sorted)
             BOX_PLOT_UPPER_QUARTILE_EVEN = upper_quartile_even(int_list_sorted)
             BOX_PLOT_MAX = item_max(int_list_sorted)
-            print("\nNumber has been added")
+            print("Number has been added")
         except:
-            print("""
-Error!!! invalid command or ni number given
+            print("""Error!!! invalid command or no number given
 
-Retry again
-            """)
+Retry again""")
