@@ -11,11 +11,11 @@
 
 ### **Overview**
 
-This Repository will create a Box-Plot Diagramm with the Module Turtle.
+This Repository will create a Box-plot Diagram with the Module Turtle.
 You can add Numbers inside the input.txt File.
-when running the main python code, you have mutltiple options.
+when running the main python code, you have multiple options.
 when typing cal, it will firstly give you important information in Terminal like the median
-and upper Quartile and so on. It will also draw the Box-plot in a diffrent window
+and upper Quartile and so on. It will also draw the Box-plot in a different window
 
 ###### **Instructions**
 
@@ -26,9 +26,17 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 |![Terminal](Pictures/terminal.png)|
 |:--:|
-|What the output will look like|
+|What the Output will look like|
 
-![Diagram](Pictures/window.png)
+|![Diagram](Pictures/window.png)|
+|:--:|
+|What the Diagram will look like|
+
+###### **Commands**
+
+- cal -> will give the Values and draw the Diagram
+- any Number -> will add the Number to the Data
+- lis -> will show you the data \(list\)
 
 ---
 
@@ -40,7 +48,7 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 |![Terminal](Pictures/terminal.png)|
 |:--:|
-|What the output will look like|
+|Wie der Ausgang wird aussehen|
 
 ![Diagram](Pictures/window.png)
 
@@ -56,7 +64,7 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 |![Terminal](Pictures/terminal.png)|
 |:--:|
-|What the output will look like|
+|Ресультат|
 
 ![Diagram](Pictures/window.png)
 
