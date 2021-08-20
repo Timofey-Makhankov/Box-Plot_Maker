@@ -1,7 +1,10 @@
 # Box-Plot Maker
 
 ### **Languages**
+
+|:--:|
 | [English](#English) | [German](#Deutsch) | [Russian](#Русский) |
+|:--:|
 
 ---
 
