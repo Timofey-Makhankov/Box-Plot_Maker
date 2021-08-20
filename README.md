@@ -2,7 +2,7 @@
 
 ### **Languages**
 
-|[English](#English)|[German](#Deutsch)|[Russian](#Русский)|
+| [English](#English) | [German](#Deutsch) | [Russian](#Русский) |
 
 ---
 
@@ -18,12 +18,13 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 ###### **Instructions**
 
-- Download the Zip File of the repository
-- open Input.txt, remove the example data and add your own data
-- save the File
-- Run Box-Plot_Maker.py with cmd in the Folder 
+1. Download the Zip File of the repository
+2. open Input.txt, remove the example data and add your own data
+3. save the File
+4. Run Box-Plot_Maker.py with cmd in the Folder 
 
 ![Terminal](Pictures/terminal.png)
+
 |:--:|
 |What the output will look like|
 
@@ -38,8 +39,9 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 ###### **Einleitung**
 
 ![Terminal](Pictures/terminal.png)
-|:--:|
-|What the output will look like|
+
+| :--: |
+| What the output will look like |
 
 ![Diagram](Pictures/window.png)
 
@@ -54,8 +56,9 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 ###### **Инструкции**
 
 ![Terminal](Pictures/terminal.png)
-|:--:|
-|What the output will look like|
+
+| :--: |
+| What the output will look like |
 
 ![Diagram](Pictures/window.png)
 
