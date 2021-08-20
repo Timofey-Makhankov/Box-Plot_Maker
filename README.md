@@ -16,7 +16,7 @@ when running the main python code, you have mutltiple options.
 when typing cal, it will firstly give you important information in Terminal like the median
 and upper Quartile and so on. It will also draw the Box-plot in a diffrent window
 
-![Terminal](Pictures\terminal.png)
+![Terminal](Pictures/terminal.png)
 
 ## **Deutsch**
 
