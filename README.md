@@ -26,9 +26,8 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 ![Terminal](Pictures/terminal.png)
 
-|:--:|
-
 |What the output will look like|
+|------------------------------|
 
 ![Diagram](Pictures/window.png)
 
@@ -41,8 +40,8 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 ###### **Einleitung**
 
 ![Terminal](Pictures/terminal.png)
-|:--:|
 |What the output will look like|
+|------------------------------|
 
 ![Diagram](Pictures/window.png)
 
@@ -58,8 +57,8 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 ![Terminal](Pictures/terminal.png)
 
-|:--:|
 |What the output will look like|
+|------------------------------|
 
 ![Diagram](Pictures/window.png)
 
