@@ -42,6 +42,8 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 
 ## **Deutsch**
 
+*coming soon*
+
 ### **Überblick**
 
 ###### **Einleitung**
@@ -50,13 +52,15 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 |:--:|
 |Wie der Ausgang wird aussehen|
 
-![Diagram](Pictures/window.png)
-
-*coming soon*
+|![Diagram](Pictures/window.png)|
+|:--:|
+|Wie das Diagramm wird aussehen|
 
 ---
 
 ## **Русский**
+
+*coming soon*
 
 ### **Обзор**
 
@@ -66,8 +70,8 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 |:--:|
 |Ресультат|
 
-![Diagram](Pictures/window.png)
-
-*coming soon*
+|![Diagram](Pictures/window.png)|
+|:--:|
+|Диаграмма|
 
 ---
