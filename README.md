@@ -2,7 +2,7 @@
 
 ### **Languages**
 
-[English](#English) [German](#Deutsch) [Russian](#Русский)
+|[English](#English)|[German](#Deutsch)|[Russian](#Русский)|
 
 ---
 
