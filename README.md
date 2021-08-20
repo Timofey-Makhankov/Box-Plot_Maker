@@ -68,7 +68,7 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 
 |![Terminal](Pictures/terminal.png)|
 |:--:|
-|Ресультат|
+|Результат|
 
 |![Diagram](Pictures/window.png)|
 |:--:|
