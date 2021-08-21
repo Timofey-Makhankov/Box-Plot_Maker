@@ -24,9 +24,9 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 3. save the File
 4. Run Box-Plot_Maker.py with cmd in the Folder
 
-bash '''
-start Box-Plot_Maker.py
-'''
+cmd:
+	
+	start Box-Plot_Maker.py
 
 |![Terminal](Pictures/terminal.png)|![Diagram](Pictures/window.png)|
 |:--:                              |:--:                           |
