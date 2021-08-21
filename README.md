@@ -22,7 +22,12 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 1. Download the Zip File of the repository
 2. open Input.txt, remove the example data and add your own data
 3. save the File
-4. Run Box-Plot_Maker.py with cmd in the Folder 
+4. Run Box-Plot_Maker.py with cmd in the Folder
+
+'''cmd
+start Box-Plot_Maker.py
+'''
+
 
 |![Terminal](Pictures/terminal.png)|![Diagram](Pictures/window.png)|
 |:--:                              |:--:                           |
