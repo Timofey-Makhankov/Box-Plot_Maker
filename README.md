@@ -24,13 +24,9 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 3. save the File
 4. Run Box-Plot_Maker.py with cmd in the Folder 
 
-|![Terminal](Pictures/terminal.png)|
-|:--:|
-|What the Output will look like|
-
-|![Diagram](Pictures/window.png)|
-|:--:|
-|What the Diagram will look like|
+|![Terminal](Pictures/terminal.png)|![Diagram](Pictures/window.png)|
+|:--:                              |:--:                           |
+|What the Output will look like    |What the Diagram will look like|
 
 ###### **Commands**
 
@@ -48,13 +44,9 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 
 ###### **Einleitung**
 
-|![Terminal](Pictures/terminal.png)|
-|:--:|
-|Wie der Ausgang wird aussehen|
-
-|![Diagram](Pictures/window.png)|
-|:--:|
-|Wie das Diagramm wird aussehen|
+|![Terminal](Pictures/terminal.png)|![Diagram](Pictures/window.png)|
+|:--:                              |:--:                           |
+|Wie der Ausgang wird aussehen     |Wie das Diagramm wird aussehen |
 
 ---
 
@@ -66,12 +58,8 @@ and upper Quartile and so on. It will also draw the Box-plot in a different wind
 
 ###### **Инструкции**
 
-|![Terminal](Pictures/terminal.png)|
-|:--:|
-|Результат|
-
-|![Diagram](Pictures/window.png)|
-|:--:|
-|Диаграмма|
+|![Terminal](Pictures/terminal.png)|![Diagram](Pictures/window.png)|
+|:--:                              |:--:                           |
+|Результат                         |Диаграмма                      |
 
 ---
