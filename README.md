@@ -11,8 +11,6 @@
 
 #### **Overview**
 
----
-
 This Repository will create a Box-Plot Diagramm with the Module Turtle.
 You can add Numbers inside the input.txt File.
 when running the main python code, you have mutltiple options.
@@ -35,8 +33,6 @@ and upper Quartile and so on. It will also draw the Box-plot in a diffrent windo
 
 #### **Überblick**
 
----
-
 ##### **Einleitung**
 
 _coming soon_
@@ -46,8 +42,6 @@ _coming soon_
 ---
 
 #### **Обзор**
-
----
 
 ##### **Инструкции**
 
