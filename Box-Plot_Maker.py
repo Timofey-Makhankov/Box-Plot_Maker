@@ -6,6 +6,8 @@ with open('input.txt', encoding='utf-8') as f:
     CONTENT = f.read()
     f.close()
 
+turtle.speed(0)
+
 # makes it into list
 def float_list(array: str):
     string_array = array.split(" ")
