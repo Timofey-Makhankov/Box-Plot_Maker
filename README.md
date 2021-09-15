@@ -11,8 +11,8 @@
 
 #### **Overview**
 
-This Code will create a Box-Plot Diagramm with the Module Turtle.
-You can add Numbers inside the input.txt File.
+This Program will create a Box-Plot Diagramm with the Module Turtle.
+You can add Data inside the input.txt File.
 when running the Main Code, it won't only "Draw" the Diagram but also gives important information:  
 
 * Median
@@ -25,7 +25,7 @@ when running the Main Code, it won't only "Draw" the Diagram but also gives impo
 
 1. Download the Repository as a Zip-File
 2. Unzip the Zip-File
-3. remove the example code in input.txt, add your own Number set and save
+3. remove the example code in input.txt, add your own Data set and save (atleast 10 Numbers)
 4. run Box-Plot_Maker.py
 
 ##### **Commands**
@@ -43,7 +43,6 @@ when running the Main Code, it won't only "Draw" the Diagram but also gives impo
 |Diagram|
 
 ---
----
 
 ### **Deutsch**
 
@@ -51,13 +50,21 @@ when running the Main Code, it won't only "Draw" the Diagram but also gives impo
 
 #### **Überblick**
 
-coming soon
+Dieser Programm erstellt ein Box-Plot-Diagramm mit dem Modul Turtle.
+Sie können Daten in die Datei input.txt einfügen.
+wenn der Main Code ausgeführt wird, wird er nicht nur das Diagramm "zeichnen", sondern auch wichtige Informationen liefern:
+
+* mittlere Zahl
+* grösste Zahl
+* kleinste Zahl
+* oberes Quartil
+* unteres Quartil
 
 ##### **Einleitung**
 
 1. herunterladet dieses Repository als Zip-Datei
 2. entpackt das Zip-Datei
-3. löscht das beispiel im input.txt, fügt eigene Zahlen hin und speichert
+3. löscht das beispiel im input.txt, fügt eigene Daten hinein und speichert (Minimum 10 Zahlen)
 4. führt Box-Plot_Maker.py aus
 
 ##### **Befehle**
@@ -75,7 +82,6 @@ coming soon
 |Diagramm|
 
 ---
----
 
 ### **Русский**
 
@@ -88,5 +94,11 @@ coming soon
 ##### **Инструкции**
 
 coming soon
+
+##### **Команды**
+
+* cal -> создает коробчатую диаграмму с заданными данными
+* lis -> распечатывает массив
+* любой Номер -> добавляет заданное число в массив
 
 ---
