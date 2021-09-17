@@ -30,7 +30,7 @@ when running the Main Code, it won't only "Draw" the Diagram but also gives impo
 
 ##### **Commands**
 
-* cal -> creates a Box-Plot with the given Data
+* cal -> creates a Box-Plot Diagram with the given Data
 * lis -> prints out the Array
 * any Number -> adds the given number to the Array
 
@@ -102,3 +102,7 @@ coming soon
 * любой Номер -> добавляет заданное число в массив
 
 ---
+
+ - [x] English
+ - [x] German
+ - [] Russian
